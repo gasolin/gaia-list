@@ -12,6 +12,7 @@
   <script src="bower_components/gaia-theme/lib/gaia-theme-selector.js"></script>
   <script src="bower_components/gaia-icons/gaia-icons.js"></script>
   <script src="bower_components/gaia-component/gaia-component.js"></script>
+  <script src="bower_components/drag/drag.js"></script>
   <script src="bower_components/gaia-switch/gaia-switch.js"></script>
   <script src="gaia-list.js"></script>
   <style type="text/css">
@@ -52,6 +53,11 @@
       background: var(--background-plus);
     }
 
+    [dir=rtl] gaia-list.contacts .face {
+      left: 16px;
+      right: auto;
+    }
+
     gaia-list.email > * {
       padding-left: 32px !important;
     }
@@ -62,6 +68,11 @@
       margin: 9px 16px;
       font-size: 0.7em;
       opacity: 0.6;
+    }
+
+    [dir=rtl] gaia-list.email time {
+      left: 0;
+      right: auto;
     }
 
     gaia-list.email p {
@@ -82,6 +93,10 @@
         var(--highlight-color);
     }
 
+    [dir=rtl] gaia-list.email .unread:after {
+      left: auto;
+      right: 0;
+    }
 
   </style>
 </head>
