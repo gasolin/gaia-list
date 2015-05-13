@@ -58,7 +58,7 @@
     }
 
     gaia-list.email > * {
-      padding-left: 32px !important;
+      padding-left: 16px !important;
     }
 
     gaia-list.email time {
@@ -82,7 +82,7 @@
       content: '';
       display: block;
       position: absolute;
-      left: 16px; top: 50%;
+      left: 0; top: 50%;
       width: 8px;
       height: 8px;
       margin-top: -4px;
@@ -104,98 +104,120 @@
   <h1 class="large l-align-center l-mb-mega">&lt;gaia-list&gt;</h1>
   <section>
     <gaia-list class="settings">
-      <a>
-        <i data-icon="brightness"></i>
-        <h3 flex>Menu 1</h3>
-        <i data-icon="forward-light"></i>
-      </a>
-      <a>
-        <i data-icon="location"></i>
-        <h3 flex>Menu 2</h3>
-        <i data-icon="forward-light"></i>
-      </a>
-      <a>
-        <i data-icon="settings"></i>
-        <h3 flex>Menu 3</h3>
-        <i data-icon="forward-light"></i>
-      </a>
       <li class="ripple">
-        <label flex flexbox for="wifi-switch">
-          <i data-icon="wifi-4"></i>
-          <h3>Wifi</h3>
-        </label>
+        <a>
+          <i data-icon="brightness"></i>
+          <h1 flex>Menu 1</h3>
+          <i data-icon="forward-light"></i>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <i data-icon="location"></i>
+          <h2 flex>Menu 2</h3>
+          <i data-icon="forward-light"></i>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <i data-icon="settings"></i>
+          <h3 flex>Menu 3</h3>
+          <i data-icon="forward-light"></i>
+        </a>
+      </li>
+      <li class="ripple">
+        <label>
+        <i data-icon="wifi-4"></i>
+        <h4 flex>Wifi</h3>
         <gaia-switch id="wifi-switch" class="divided"></gaia-switch>
+        </label>
       </li>
     </gaia-list>
 
     <hr>
 
     <gaia-list class="contacts l-mb-mega">
-      <a>
-        <div>
-          <h3>Noah Green</h3>
-          <p>Atsara Kitchens</p>
-          <div class="face"></div>
-        </div>
-      </a>
-      <a>
-        <div>
-          <h3>Will Grand</h3>
-          <p>CBN Studio</p>
-          <div class="face"></div>
-        </div>
-      </a>
-      <a>
-        <div>
-          <h3>Carolina Grey</h3>
-          <p>Mozilla</p>
-          <div class="face"></div>
-        </div>
-      </a>
+      <li class="ripple">
+        <a>
+          <div>
+            <div class="gaia-item">Noah Green</div>
+            <span class="gaia-item-desc">Atsara Kitchens</span>
+            <div class="face"></div>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <div>
+            <h3 class="gaia-item">Will Grand</h3>
+            <p>CBN Studio</p>
+            <div class="face"></div>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <div>
+            <h3 class="gaia-item">Carolina Grey</h3>
+            <p>Mozilla</p>
+            <div class="face"></div>
+          </div>
+        </a>
+      </li>
     </gaia-list>
 
     <hr>
 
     <gaia-list class="email">
-      <a class="unread">
-        <div>
-          <h3>Will Gordan</h3>
-          <p>Send photos please!</p>
-          <p>You're the best, thank you so much for all</p><time>11:30AM</time>
-        </div>
-      </a>
-      <a class="unread">
-        <div>
-          <h3>Jennifer Liu</h3>
-          <p>Road trip next weekend</p>
-          <p>I've been wanting to visit that place for a</p>
-          <time>11:30AM</time>
-        </div>
-      </a>
-      <a>
-        <div>
-          <h3>Michael Stanford</h3>
-          <p>You might like this or not?</p>
-          <p>Great find, I definitely check with Brian if</p>
-          <time>11:30AM</time>
-        </div>
-      </a>
-      <a class="unread">
-        <div>
-          <h3>Jennifer Liu</h3>
-          <p>Road trip next weekend</p>
-          <p>I'vee been wanting to visit that place for a</p>
-          <time>11:30AM</time>
-        </div>
-      </a>
-      <a>
-        <div>
-          <h3>Michael Stanford</h3>
-          <p>You might like this or not?</p>
-          <p>Great find, I definitely check with Brian if</p>
-          <time>11:30AM</time>
-        </div>
-      </a>
+      <li class="ripple">
+        <a class="unread">
+          <div>
+            <h3 class="gaia-item">Will Gordan</h3>
+            <p>Send photos please!</p>
+            <p>You're the best, thank you so much for all</p><time>11:30AM</time>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a class="unread">
+          <div>
+            <h3 class="gaia-item">Jennifer Liu</h3>
+            <p>Road trip next weekend</p>
+            <p>I've been wanting to visit that place for a</p>
+            <time>11:30AM</time>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <div>
+            <h3 class="gaia-item">Michael Stanford</h3>
+            <p>You might like this or not?</p>
+            <p>Great find, I definitely check with Brian if</p>
+            <time>11:30AM</time>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a class="unread">
+          <div>
+            <h3 class="gaia-item">Jennifer Liu</h3>
+            <p>Road trip next weekend</p>
+            <p>I'vee been wanting to visit that place for a</p>
+            <time>11:30AM</time>
+          </div>
+        </a>
+      </li>
+      <li class="ripple">
+        <a>
+          <div>
+            <h3 class="gaia-item">Michael Stanford</h3>
+            <p>You might like this or not?</p>
+            <p>Great find, I definitely check with Brian if</p>
+            <time>11:30AM</time>
+          </div>
+        </a>
+      </li>
     </gaia-list>
   </section>
 </body>

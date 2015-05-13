@@ -29,13 +29,26 @@ module.exports = component.register('gaia-list', {
 
   created: function() {
     this.setupShadowRoot();
+
     this.els = { inner: this.shadowRoot.querySelector('.inner') };
     this.addEventListener('click', this.onPointerDown);
-    this.makeAccessible();
+    // offload the initiate operation to save loadtime
+    setTimeout(() => {
+      this.makeAccessible();
+    });
   },
 
   makeAccessible: function() {
     [].forEach.call(this.children, (el) => { el.tabIndex = 0; });
+
+    // let screen reader read the button text and ignore the icon text
+    // when both icon and text existed
+    if (this.getElementsByTagName('i')) {
+      var items = this.getElementsByTagName('i');
+      for (var i = 0, len = items.length; i < len; i++) {
+        items[i].setAttribute('aria-hidden', true);
+      }
+    }
   },
 
   itemShouldRipple: function(el) {
@@ -133,7 +146,7 @@ module.exports = component.register('gaia-list', {
     /** Children
      ---------------------------------------------------------*/
 
-    ::content > *:not(style) {
+    ::content li > *:not(style) {
       position: relative;
       z-index: 2;
 
@@ -167,21 +180,15 @@ module.exports = component.register('gaia-list', {
     ::content h1,
     ::content h2,
     ::content h3,
-    ::content h4 {
+    ::content h4,
+    ::content .gaia-item {
       font-weight: 400;
     }
 
     /** Layout Helpers
      ---------------------------------------------------------*/
 
-    /**
-     * [flexbox]
-     *
-     * A helper attribute to allow users to
-     * quickly define content as a flexbox.
-     */
-
-    ::content [flexbox] {
+    ::content li {
       display: flex;
     }
 
@@ -228,7 +235,8 @@ module.exports = component.register('gaia-list', {
      ---------------------------------------------------------*/
 
     ::content small,
-    ::content p {
+    ::content p,
+    ::content .gaia-item-desc {
       font-size: 0.7em;
       line-height: 1.35em;
     }
@@ -245,8 +253,12 @@ module.exports = component.register('gaia-list', {
       display: block;
     }
 
-    ::content > * > i:last-child {
+    ::content i:last-child {
       width: auto;
+    }
+
+    ::content i:last-child:before {
+      text-align: right;
     }
 
     /**
